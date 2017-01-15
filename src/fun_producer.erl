@@ -189,10 +189,8 @@ microsleep(MicroSec) ->
     Target = add_microsec(MicroSec, cur_timestamp()),
     AdjMsec = MicroSec - ?JITTER,
     case AdjMsec > 10000 of
-        true ->
-            timer:sleep(AdjMsec div 1000);
-        false ->
-            ok
+        true -> timer:sleep(AdjMsec div 1000);
+        false -> ok
     end,
     {Finish, Loops} = busywait_until(Target, 1),
     {timer:now_diff(Finish, Target), Loops}.
