@@ -1,0 +1,18 @@
+{application, fun_test,
+ [{description, "Fun Test App"},
+  {vsn, "0.1.0"},
+  {registered, []},
+  {mod, { fun_test_app, []}},
+  {applications,
+   [kernel,
+    stdlib,
+    lager
+   ]},
+  {env,[]},
+  {modules, []},
+  {included_applications, [eredis, poolboy, eredis_pool]},
+
+  {maintainers, []},
+  {licenses, []},
+  {links, []}
+ ]}.
